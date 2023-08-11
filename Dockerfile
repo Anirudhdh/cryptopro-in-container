@@ -5,16 +5,16 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV PATH="${PATH}:/opt/cprocsp/bin/amd64/"
 
 # Downloaded from https://www.cryptopro.ru/fns_experiment
-ADD csp-fns-amd64_deb.tgz /cryptopro
+ADD linux-amd64_deb.tgz /cryptopro
 
 # Downloaded from https://www.rutoken.ru/support/download/pkcs/#linux
-COPY librtpkcs11ecp_2.6.1.0-1_amd64.deb /cryptopro
+COPY librtpkcs11ecp_2.8.1.0-1_amd64.deb /cryptopro
 
 # Downloaded from https://restapi.moedelo.org/eds/crypto/plugin/api/v1/installer/download?os=linux&version=latest
 COPY moedelo-plugin_*_amd64.deb /cryptopro
 
 # Downloaded from install.kontur.ru
-COPY kontur.plugin_amd64.deb /cryptopro
+COPY diag.plugin_amd64.001648.deb /cryptopro
 
 # Downloaded from https://ds-plugin.gosuslugi.ru/plugin/upload/Index.spr
 COPY IFCPlugin-x86_64.deb /cryptopro
@@ -46,12 +46,12 @@ RUN apt-get update && \
 COPY firefox_cryptopro_extension_latest.xpi /usr/lib/firefox-esr/distribution/extensions/ru.cryptopro.nmcades@cryptopro.ru.xpi
 
 # Downloaded from install.kontur.ru (firefox addon)
-COPY kontur.toolbox@gmail.com.xpi /usr/lib/firefox-esr/distribution/extensions/kontur.toolbox@gmail.com.xpi
+COPY kontur.extension@kontur.ru.xpi /usr/lib/firefox-esr/distribution/extensions/kontur.toolbox@gmail.com.xpi
 
 # Downloaded from https://ds-plugin.gosuslugi.ru/plugin/upload/Index.spr
-COPY addon-1.2.8-fx.xpi /usr/lib/firefox-esr/distribution/extensions/pbafkdcnd@ngodfeigfdgiodgnmbgcfha.ru.xpi
+ COPY addon-1.2.8-fx.xpi /usr/lib/firefox-esr/distribution/extensions/pbafkdcnd@ngodfeigfdgiodgnmbgcfha.ru.xpi
 
 # Downloaded from https://addons.mozilla.org/ru/firefox/addon/adapter-rutoken-plugin/
-COPY rutokenplugin@rutoken.ru.xpi /usr/lib/firefox-esr/distribution/extensions/rutokenplugin@rutoken.ru.xpi
+ COPY adapter_rutoken_plugin-1.0.5.0.xpi /usr/lib/firefox-esr/distribution/extensions/rutokenplugin@rutoken.ru.xpi
 
 CMD ["bash"]
