@@ -24,21 +24,12 @@ COPY libnpRutokenPlugin_*_amd64.deb /cryptopro
 
 RUN apt-get update && \
     apt-get install -y whiptail libccid libpcsclite1 pcscd pcsc-tools opensc \
-    libgtk2.0-0 libcanberra-gtk-module libcanberra-gtk3-0 libsm6 \
-    firefox-esr && \
-    cd /cryptopro/fns-amd64_deb && \
+    libgtk2.0-0 libcanberra-gtk-module libcanberra-gtk3-0 libsm6 firefox-esr && \
+    cd /cryptopro/linux-amd64_deb && \
     dpkg -i /cryptopro/librtpkcs11ecp_*_amd64.deb && \
-    sed -i s#install_gui#install# _FNS_INSTALLER.sh && \
-    ./_FNS_INSTALLER.sh && \
-    dpkg -i /cryptopro/fns-amd64_deb/cprocsp-pki-cades-64_*_amd64.deb && \
-    dpkg -i /cryptopro/fns-amd64_deb/cprocsp-rdr-gui-gtk-64_*_amd64.deb && \
-    dpkg -i /cryptopro/fns-amd64_deb/cprocsp-pki-plugin-64_*_amd64.deb && \
-    dpkg -i /cryptopro/fns-amd64_deb/cprocsp-cptools-gtk-64_*_amd64.deb && \
-    dpkg -i /cryptopro/fns-amd64_deb/cprocsp-rdr-pcsc-64_*_amd64.deb && \
-    dpkg -i /cryptopro/fns-amd64_deb/cprocsp-rdr-rutoken-64_*_amd64.deb && \
-    dpkg -i /cryptopro/fns-amd64_deb/cprocsp-rdr-cryptoki-64_*_amd64.deb && \
+    ./install.sh && \
     dpkg -i /cryptopro/moedelo-plugin_*_amd64.deb && \
-    dpkg -i /cryptopro/kontur.plugin_amd64.deb && \
+    dpkg -i /cryptopro/diag.plugin_amd64.001648.deb && \
     dpkg -i /cryptopro/IFCPlugin-x86_64.deb && \
     dpkg -i /cryptopro/libnpRutokenPlugin_*_amd64.deb
 
