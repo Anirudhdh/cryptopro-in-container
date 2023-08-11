@@ -40,9 +40,9 @@ COPY firefox_cryptopro_extension_latest.xpi /usr/lib/firefox-esr/distribution/ex
 COPY kontur.extension@kontur.ru.xpi /usr/lib/firefox-esr/distribution/extensions/kontur.toolbox@gmail.com.xpi
 
 # Downloaded from https://ds-plugin.gosuslugi.ru/plugin/upload/Index.spr
- COPY addon-1.2.8-fx.xpi /usr/lib/firefox-esr/distribution/extensions/pbafkdcnd@ngodfeigfdgiodgnmbgcfha.ru.xpi
+COPY addon-1.2.8-fx.xpi /usr/lib/firefox-esr/distribution/extensions/pbafkdcnd@ngodfeigfdgiodgnmbgcfha.ru.xpi
 
 # Downloaded from https://addons.mozilla.org/ru/firefox/addon/adapter-rutoken-plugin/
- COPY adapter_rutoken_plugin-1.0.5.0.xpi /usr/lib/firefox-esr/distribution/extensions/rutokenplugin@rutoken.ru.xpi
+COPY adapter_rutoken_plugin-1.0.5.0.xpi /usr/lib/firefox-esr/distribution/extensions/rutokenplugin@rutoken.ru.xpi
 
 CMD ["bash"]
