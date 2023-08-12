@@ -31,7 +31,10 @@ RUN apt-get update && \
     dpkg -i /cryptopro/moedelo-plugin_*_amd64.deb && \
     dpkg -i /cryptopro/diag.plugin_amd64.001648.deb && \
     dpkg -i /cryptopro/IFCPlugin-x86_64.deb && \
-    dpkg -i /cryptopro/libnpRutokenPlugin_*_amd64.deb
+    dpkg -i /cryptopro/libnpRutokenPlugin_*_amd64.deb && \
+    dpkg -i /cryptopro/cprocsp-cptools-gtk-64_5.0.12900-7_amd64.deb && \
+    dpkg -i /cryptopro/cprocsp-rdr-gui-gtk-64_5.0.12900-7_amd64.deb && \
+    dpkg -i /cryptopro/lsb-cprocsp-import-ca-certs
 
 # Downloaded from https://www.cryptopro.ru/sites/default/files/products/cades/extensions/firefox_cryptopro_extension_latest.xpi
 COPY firefox_cryptopro_extension_latest.xpi /usr/lib/firefox-esr/distribution/extensions/ru.cryptopro.nmcades@cryptopro.ru.xpi
