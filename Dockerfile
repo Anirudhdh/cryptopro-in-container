@@ -40,7 +40,7 @@ RUN apt-get update && \
     localedef -i ru_RU -c -f UTF-8 -A /usr/share/locale/locale.alias ru_RU.UTF-8 && \
     ln -snf /usr/share/zoneinfo/Europe/Moscow /etc/localtime && \
     echo Europe/Moscow > /etc/timezone && \
-    echo "export NO_AT_BRIDGE=1" >> /root/.bashrc
+    export NO_AT_BRIDGE=1
 
 # Downloaded from https://www.cryptopro.ru/sites/default/files/products/cades/extensions/firefox_cryptopro_extension_latest.xpi
 COPY firefox_cryptopro_extension_latest.xpi /usr/lib/firefox-esr/distribution/extensions/ru.cryptopro.nmcades@cryptopro.ru.xpi
