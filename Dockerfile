@@ -39,7 +39,7 @@ RUN apt-get update && \
     dpkg-reconfigure --frontend=noninteractive locales && update-locale LANG=ru_RU.UTF-8 && \
     ln -snf /usr/share/zoneinfo/Europe/Moscow /etc/localtime && \
     echo Europe/Moscow > /etc/timezone && \
-    export NO_AT_BRIDGE=1
+    echo "export NO_AT_BRIDGE=1" >> /root/.bashrc
 
 ENV LANG ru_RU.UTF-8
 ENV LANGUAGE ru_RU:ru
