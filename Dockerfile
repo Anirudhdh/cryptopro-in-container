@@ -24,7 +24,7 @@ COPY libnpRutokenPlugin_*_amd64.deb /cryptopro
 
 RUN apt-get update && \
     apt-get install -y whiptail libccid libpcsclite1 pcscd pcsc-tools opensc \
-    libgtk2.0-0 libcanberra-gtk-module libcanberra-gtk3-0 libsm6 firefox nano locales && \
+    libgtk2.0-0 libcanberra-gtk-module libcanberra-gtk3-0 libsm6 firefox nano locales libpci-dev && \
     cd /cryptopro/linux-amd64_deb && \
     dpkg -i /cryptopro/librtpkcs11ecp_*_amd64.deb && \
     ./install.sh && \
