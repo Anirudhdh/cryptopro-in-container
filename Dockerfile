@@ -35,9 +35,9 @@ RUN apt-get update && \
     dpkg -i /cryptopro/linux-amd64_deb/cprocsp-cptools-gtk*amd64.deb && \
     dpkg -i /cryptopro/linux-amd64_deb/cprocsp-rdr-gui-gtk*amd64.deb && \
     dpkg -i /cryptopro/linux-amd64_deb/lsb-cprocsp-import-ca-certs*all.deb && \
-    dpkg -i /cryptopro/cprocsp-pki-cades*amd64.deb && \
-    dpkg -i /cryptopro/cprocsp-pki-plugin*amd64.deb && \
-    dpkg -i /cryptopro/cprocsp-pki-phpcades*all.deb && \
+    dpkg -i /cryptopro/linux-amd64_deb/cprocsp-pki-cades*amd64.deb && \
+    dpkg -i /cryptopro/linux-amd64_deb/cprocsp-pki-plugin*amd64.deb && \
+    dpkg -i /cryptopro/linux-amd64_deb/cprocsp-pki-phpcades*all.deb && \
     sed -i -e 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales && update-locale LANG=ru_RU.UTF-8 && \
     ln -snf /usr/share/zoneinfo/Europe/Moscow /etc/localtime && \
