@@ -32,10 +32,10 @@ RUN apt-get update && \
     dpkg -i /cryptopro/diag.plugin_amd64*.deb && \
     dpkg -i /cryptopro/IFCPlugin-x86_64.deb && \
     dpkg -i /cryptopro/libnpRutokenPlugin_*_amd64.deb && \
-    dpkg -i /cryptopro/cprocsp-cptools-gtk*amd64.deb && \
-    dpkg -i /cryptopro/cprocsp-rdr-gui-gtk*amd64.deb && \
-    dpkg -i lsb-cprocsp-import-ca-certs*all.deb && \
-    export NO_AT_BRIDGE=1 
+    dpkg -i /cryptopro/linux-amd64_deb/cprocsp-cptools-gtk*amd64.deb && \
+    dpkg -i /cryptopro/linux-amd64_deb/cprocsp-rdr-gui-gtk*amd64.deb && \
+    dpkg -i /cryptopro/linux-amd64_deb/lsb-cprocsp-import-ca-certs*all.deb && \
+    echo "export NO_AT_BRIDGE=1" >> /root/.bashrc
 
 # Downloaded from https://www.cryptopro.ru/sites/default/files/products/cades/extensions/firefox_cryptopro_extension_latest.xpi
 COPY firefox_cryptopro_extension_latest.xpi /usr/lib/firefox-esr/distribution/extensions/ru.cryptopro.nmcades@cryptopro.ru.xpi
