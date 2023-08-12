@@ -1,4 +1,4 @@
-# 2022 December
+# 2023 August
 FROM debian:stable@sha256:880aa5f5ab441ee739268e9553ee01e151ccdc52aa1cd545303cfd3d436c74db
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -35,6 +35,11 @@ RUN apt-get update && \
     dpkg -i /cryptopro/linux-amd64_deb/cprocsp-cptools-gtk*amd64.deb && \
     dpkg -i /cryptopro/linux-amd64_deb/cprocsp-rdr-gui-gtk*amd64.deb && \
     dpkg -i /cryptopro/linux-amd64_deb/lsb-cprocsp-import-ca-certs*all.deb && \
+    sed -i -e 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen && \
+    locale-gen && \
+    localedef -i ru_RU -c -f UTF-8 -A /usr/share/locale/locale.alias ru_RU.UTF-8 && \
+    ln -snf /usr/share/zoneinfo/Europe/Moscow /etc/localtime && \
+    echo Europe/Moscow > /etc/timezone && \
     echo "export NO_AT_BRIDGE=1" >> /root/.bashrc
 
 # Downloaded from https://www.cryptopro.ru/sites/default/files/products/cades/extensions/firefox_cryptopro_extension_latest.xpi
