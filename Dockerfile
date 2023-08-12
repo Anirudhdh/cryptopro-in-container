@@ -8,13 +8,13 @@ ENV PATH="${PATH}:/opt/cprocsp/bin/amd64/"
 ADD linux-amd64_deb.tgz /cryptopro
 
 # Downloaded from https://www.rutoken.ru/support/download/pkcs/#linux
-COPY librtpkcs11ecp_2.8.1.0-1_amd64.deb /cryptopro
+COPY librtpkcs11ecp*amd64.deb /cryptopro
 
 # Downloaded from https://restapi.moedelo.org/eds/crypto/plugin/api/v1/installer/download?os=linux&version=latest
 COPY moedelo-plugin_*_amd64.deb /cryptopro
 
 # Downloaded from install.kontur.ru
-COPY diag.plugin_amd64.001648.deb /cryptopro
+COPY diag.plugin_amd64*.deb /cryptopro
 
 # Downloaded from https://ds-plugin.gosuslugi.ru/plugin/upload/Index.spr
 COPY IFCPlugin-x86_64.deb /cryptopro
@@ -29,12 +29,12 @@ RUN apt-get update && \
     dpkg -i /cryptopro/librtpkcs11ecp_*_amd64.deb && \
     ./install.sh && \
     dpkg -i /cryptopro/moedelo-plugin_*_amd64.deb && \
-    dpkg -i /cryptopro/diag.plugin_amd64.001648.deb && \
+    dpkg -i /cryptopro/diag.plugin_amd64*.deb && \
     dpkg -i /cryptopro/IFCPlugin-x86_64.deb && \
     dpkg -i /cryptopro/libnpRutokenPlugin_*_amd64.deb && \
-    dpkg -i /cryptopro/cprocsp-cptools-gtk-64_5.0.12900-7_amd64.deb && \
-    dpkg -i /cryptopro/cprocsp-rdr-gui-gtk-64_5.0.12900-7_amd64.deb && \
-    dpkg -i /cryptopro/lsb-cprocsp-import-ca-certs
+    dpkg -i /cryptopro/cprocsp-cptools-gtk*amd64.deb && \
+    dpkg -i /cryptopro/cprocsp-rdr-gui-gtk*amd64.deb && \
+    dpkg -i lsb-cprocsp-import-ca-certs*all.deb
 
 # Downloaded from https://www.cryptopro.ru/sites/default/files/products/cades/extensions/firefox_cryptopro_extension_latest.xpi
 COPY firefox_cryptopro_extension_latest.xpi /usr/lib/firefox-esr/distribution/extensions/ru.cryptopro.nmcades@cryptopro.ru.xpi
@@ -43,9 +43,9 @@ COPY firefox_cryptopro_extension_latest.xpi /usr/lib/firefox-esr/distribution/ex
 COPY kontur.extension@kontur.ru.xpi /usr/lib/firefox-esr/distribution/extensions/kontur.toolbox@gmail.com.xpi
 
 # Downloaded from https://ds-plugin.gosuslugi.ru/plugin/upload/Index.spr
-COPY addon-1.2.8-fx.xpi /usr/lib/firefox-esr/distribution/extensions/pbafkdcnd@ngodfeigfdgiodgnmbgcfha.ru.xpi
+COPY addon*.xpi /usr/lib/firefox-esr/distribution/extensions/pbafkdcnd@ngodfeigfdgiodgnmbgcfha.ru.xpi
 
 # Downloaded from https://addons.mozilla.org/ru/firefox/addon/adapter-rutoken-plugin/
-COPY adapter_rutoken_plugin-1.0.5.0.xpi /usr/lib/firefox-esr/distribution/extensions/rutokenplugin@rutoken.ru.xpi
+COPY adapter_rutoken_plugin*.xpi /usr/lib/firefox-esr/distribution/extensions/rutokenplugin@rutoken.ru.xpi
 
 CMD ["bash"]
