@@ -24,7 +24,7 @@ COPY libnpRutokenPlugin_*_amd64.deb /cryptopro
 
 RUN apt-get update && \
     apt-get install -y whiptail libccid libpcsclite1 pcscd pcsc-tools opensc \
-    libgtk2.0-0 libcanberra-gtk-module libcanberra-gtk3-0 libsm6 firefox-esr nano locales && \
+    libgtk2.0-0 libcanberra-gtk-module libcanberra-gtk3-0 libsm6 firefox nano locales && \
     cd /cryptopro/linux-amd64_deb && \
     dpkg -i /cryptopro/librtpkcs11ecp_*_amd64.deb && \
     ./install.sh && \
@@ -42,7 +42,8 @@ RUN apt-get update && \
     dpkg-reconfigure --frontend=noninteractive locales && update-locale LANG=ru_RU.UTF-8 && \
     ln -snf /usr/share/zoneinfo/Europe/Moscow /etc/localtime && \
     echo Europe/Moscow > /etc/timezone && \
-    echo "export NO_AT_BRIDGE=1" >> /root/.bashrc
+    echo "export NO_AT_BRIDGE=1" >> /root/.bashrc && \
+    echo "alias ll='ls -alFh'" >> /root/.bashrc
 
 ENV LANG ru_RU.UTF-8
 ENV LANGUAGE ru_RU:ru
