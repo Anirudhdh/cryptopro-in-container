@@ -43,7 +43,7 @@ RUN apt-get update && \
     ln -snf /usr/share/zoneinfo/Europe/Moscow /etc/localtime && \
     echo Europe/Moscow > /etc/timezone && \
     echo "export NO_AT_BRIDGE=1" >> /root/.bashrc && \
-    echo "alias ll=\'ls -alFh\'" >> /root/.bashrc
+    echo "alias ll='ls -alFh'" >> /root/.bashrc
 
 ENV LANG ru_RU.UTF-8
 ENV LANGUAGE ru_RU:ru
