@@ -7,7 +7,7 @@
 - Установить всё необходимое для работы токена на хост системе, обычно это pcsc и библиотеки к нему (смотреть на сайте производителя)
 - Скачать все необходимые пакеты в папку с Dockerfile
 - Собрать образ docker `docker build ./ -t cryptopro-in-container:latest`
-- Разрешить открыть окна в wm приложениям со стороны `xhost +127.0.0.1:`
+- Разрешить открыть окна в wm приложениям со стороны `xhost + local:`
 - Запустить контейнер из полученного образа 
 ```
 docker run --rm -ti -v /home/$USER/Documents:/Documents -v /run/pcscd/pcscd.comm:/run/pcscd/pcscd.comm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix"$DISPLAY" cryptopro-in-container:latest /bin/bash -i
