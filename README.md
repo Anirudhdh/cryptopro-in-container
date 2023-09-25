@@ -10,7 +10,7 @@
 - Разрешить открыть окна в wm приложениям со стороны `xhost + local:`
 - Запустить контейнер из полученного образа 
 ```
-docker run --rm -ti -v /home/$USER/Documents:/Documents -v /run/pcscd/pcscd.comm:/run/pcscd/pcscd.comm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix"$DISPLAY" cryptopro-in-container:latest /bin/bash -i
+docker run --rm -ti -v /home/$USER/Documents/cryptopro-in-container:/Documents -v /run/pcscd/pcscd.comm:/run/pcscd/pcscd.comm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix"$DISPLAY" cr53/cryptopro-in-container:latest /bin/bash -i
 # Где /run/pcsсd/pcscd.comm сокет для обращений
 # /tmp/.X11-unix доступ к активной сессии
 # DISPLAY переменная определяющая где открывать окна
