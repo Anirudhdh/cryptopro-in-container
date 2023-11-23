@@ -29,4 +29,5 @@ Total: SYS: 0.010 sec USR: 0.040 sec UTC: 0.820 sec
 - Копировать публичный сертификат с токена в файл `certmgr -export -dest mine.crt -container '\\.\Aktiv Rutoken ECP 00 00\0c686f35c-328c-0cf8-e404-900dcf68a53'`
 - Установить свой сертификат внутри контейнера `certmgr -install -store uMy -file mine.crt -cont '\\.\Aktiv Rutoken ECP 00 00\0c686f35c-328c-0cf8-e404-900dcf68a53'`
 - Запустить браузер `firefox`
+- Запустить CryptoPro `cptools`
 
