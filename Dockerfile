@@ -26,7 +26,7 @@ RUN apt-get update && \
     apt-get install -y whiptail libccid libpcsclite1 pcscd pcsc-tools opensc libgtk2.0-0 libcanberra-gtk-module libcanberra-gtk3-0 libsm6 firefox-esr nano locales libpci-dev && \
     cd /cryptopro/linux-amd64_deb && \
     dpkg -i /cryptopro/librtpkcs11ecp_*_amd64.deb && \
-    ./install.sh && \
+    ./install.sh cprocsp-rdr-pcsc cprocsp-rdr-rutoken cprocsp-rdr-cryptoki lsb-cprocsp-pkcs11 && \
     dpkg -i /cryptopro/moedelo-plugin_*_amd64.deb && \
     dpkg -i /cryptopro/diag.plugin_amd64*.deb && \
     dpkg -i /cryptopro/IFCPlugin-x86_64.deb && \
