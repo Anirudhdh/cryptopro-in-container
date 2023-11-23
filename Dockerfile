@@ -34,6 +34,9 @@ RUN apt-get update && \
     dpkg -i /cryptopro/libnpRutokenPlugin_*_amd64.deb && \
     dpkg -i /cryptopro/linux-amd64_deb/cprocsp-cptools-gtk*amd64.deb && \
     dpkg -i /cryptopro/linux-amd64_deb/cprocsp-rdr-gui-gtk*amd64.deb && \
+    dpkg -i /cryptopro/linux-amd64_deb/cprocsp-rdr-pcsc*amd64.deb && \
+    dpkg -i /cryptopro/linux-amd64_deb/cprocsp-rdr-rutoken*amd64.deb && \
+    dpkg -i /cryptopro/linux-amd64_deb/cprocsp-rdr-cryptoki*amd64.deb && \
     dpkg -i /cryptopro/linux-amd64_deb/lsb-cprocsp-import-ca-certs*all.deb && \
     dpkg -i /cryptopro/linux-amd64_deb/cprocsp-pki-cades*amd64.deb && \
     dpkg -i /cryptopro/linux-amd64_deb/cprocsp-pki-plugin*amd64.deb && \
