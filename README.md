@@ -17,7 +17,7 @@ docker run -d --name cryptopro --restart=unless-stopped -v /home/$USER/Documents
 # DISPLAY переменная определяющая где открывать окна
 # something папка внутри контейнера с содержимым той папки из которой запускаете
 ```
-- Найти имя своего ruтокена. Добавить сертификат в контейнер
+- Видим имя своего ruтокена. Добавляем сертификат в контейнер
 ```
 λ ~/.compile/cryptopro-in-container docker exec -it cryptopro bash
 ```
