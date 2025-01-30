@@ -10,8 +10,8 @@ ADD linux-amd64_deb.tgz /cryptopro
 # Downloaded from https://www.rutoken.ru/support/download/pkcs/#linux
 COPY librtpkcs11ecp*amd64.deb /cryptopro
 
-# Downloaded from https://restapi.moedelo.org/eds/crypto/plugin/api/v1/installer/download?os=linux&version=latest
-COPY МоёДелоПлагин* /cryptopro
+# Downloaded from https://restapi.moedelo.org/eds/crypto/plugin/api/v1/installer/download?os=linux&version=latest and extract the .deb package
+COPY moedelo-plugin_*_amd64.deb /cryptopro
 
 # Downloaded from install.kontur.ru
 COPY diag.plugin_amd64*.deb /cryptopro
@@ -27,7 +27,7 @@ RUN apt-get update && \
     cd /cryptopro/linux-amd64_deb && \
     dpkg -i /cryptopro/librtpkcs11ecp_*_amd64.deb && \
     ./install.sh cprocsp-rdr-pcsc cprocsp-rdr-rutoken cprocsp-rdr-cryptoki lsb-cprocsp-pkcs11 && \
-    dpkg -i /cryptopro/МоёДелоПлагин* && \
+    dpkg -i /cryptopro/moedelo-plugin_*_amd64.deb && \
     dpkg -i /cryptopro/diag.plugin_amd64*.deb && \
     dpkg -i /cryptopro/IFCPlugin-x86_64.deb && \
     dpkg -i /cryptopro/libnpRutokenPlugin_*_amd64.deb && \
