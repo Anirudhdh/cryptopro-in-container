@@ -11,7 +11,7 @@
 - Запустить pcscd
 - Запустить контейнер из полученного образа
 ```
-docker run -d --name cryptopro --restart=unless-stopped -v /home/$USER/Documents:/Documents -v /run/pcscd/pcscd.comm:/run/pcscd/pcscd.comm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix"$DISPLAY" cryptopro-in-container:latest
+docker run -ti --name cryptopro_doc -v /home/$USER/Documents:/Documents -v /run/pcscd/pcscd.comm:/run/pcscd/pcscd.comm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix"$DISPLAY" cryptopro-in-container:latest
 # Где /run/pcsсd/pcscd.comm сокет для обращений
 # /tmp/.X11-unix доступ к активной сессии
 # DISPLAY переменная определяющая где открывать окна
@@ -32,4 +32,5 @@ Total: SYS: 0.010 sec USR: 0.040 sec UTC: 0.820 sec
 ```
 - Копировать публичный сертификат с токена в файл `certmgr -export -dest mine.crt -container '\\.\Aktiv Rutoken ECP 00 00\0c686f35c-328c-0cf8-e404-900dcf68a53'`
 - Установить свой сертификат внутри контейнера `certmgr -install -store uMy -file mine.crt -cont '\\.\Aktiv Rutoken ECP 00 00\0c686f35c-328c-0cf8-e404-900dcf68a53'`
-- Запустить браузер `firefox` и CryptoPro `cptools` кликром по ярлыку `FF_N_CP.desktop`
+- Создаем образ контейнера `docker commit -m "xx" -a "test" 9fc60713ce6e cryptopro:latest`
+- Запускаем браузер `firefox` и CryptoPro `cptools` кликом по ярлыку `FF_N_CP.desktop`
