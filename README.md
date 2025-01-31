@@ -11,7 +11,7 @@
 - Запустить pcscd
 - Запустить контейнер из полученного образа
 ```
-docker run -ti --name cryptopro_doc -v /home/$USER/Documents:/Documents -v /run/pcscd/pcscd.comm:/run/pcscd/pcscd.comm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix"$DISPLAY" cryptopro-in-container:latest /bin/bash -c 'firefox |& cptools'
+docker run -ti --name cryptopro_doc -v /home/$USER/Documents:/Documents -v /run/pcscd/pcscd.comm:/run/pcscd/pcscd.comm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix"$DISPLAY" cryptopro-in-container:latest /bin/bash -c 'firefox |& cptools ; bash'
 # Где /run/pcsсd/pcscd.comm сокет для обращений
 # /tmp/.X11-unix доступ к активной сессии
 # DISPLAY переменная определяющая где открывать окна
@@ -19,7 +19,7 @@ docker run -ti --name cryptopro_doc -v /home/$USER/Documents:/Documents -v /run/
 ```
 - Видим имя своего ruтокена. Добавляем сертификат в контейнер
 ```
-λ ~/.compile/cryptopro-in-container docker exec -it cryptopro bash
+λ ~/.compile/cryptopro-in-container docker exec -it cryptopro_doc bash
 ```
 ```
 root@d66b9560c771:/# csptest -keyset -enum_cont -fqcn -verifyc
