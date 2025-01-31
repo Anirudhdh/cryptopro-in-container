@@ -32,4 +32,4 @@ Total: SYS: 0.010 sec USR: 0.040 sec UTC: 0.820 sec
 - Создаем образ контейнера `docker commit -m "xx" -a "test" $(docker ps -l -f 'name=cryptopro_doc' --format "{{.ID}}") cryptopro-in-container:latest`
 - Ненужный контейнер можно удалить `docker rm  $(docker ps -l -f 'name=cryptopro_doc' --format "{{.ID}}")`
 - Запускаем браузер `firefox` и CryptoPro `cptools` кликом по ярлыку `FF_N_CP.desktop`
-- Через 90 дней пересобираем контейнер
+- Через 90 дней, по окончании триала КриптоПро пересобираем контейнер
