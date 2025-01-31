@@ -29,7 +29,7 @@ Total: SYS: 0.010 sec USR: 0.040 sec UTC: 0.820 sec
 ```
 - Копировать публичный сертификат с токена в файл `certmgr -export -dest mine.crt -container '\\.\Aktiv Rutoken ECP 00 00\0c686f35c-328c-0cf8-e404-900dcf68a53'`
 - Установить свой сертификат внутри контейнера `certmgr -install -store uMy -file mine.crt -cont '\\.\Aktiv Rutoken ECP 00 00\0c686f35c-328c-0cf8-e404-900dcf68a53'`
-- Создаем образ контейнера `docker commit -m "xx" -a "test" $(docker ps -l -f 'name=cryptopro_doc' --format "{{.ID}}") cryptopro-in-container:latest`
+- Создаем образ контейнера `docker commit -m "xx" -a "test" $(docker ps -l -f 'name=cryptopro_doc' --format "{{.ID}}") cryptopro:latest`
 - Ненужный контейнер можно удалить `docker rm  $(docker ps -l -f 'name=cryptopro_doc' --format "{{.ID}}")`
 - Запускаем браузер `firefox` и CryptoPro `cptools` кликом по ярлыку `FFNCP.desktop`
 - Через 90 дней, по окончании триала КриптоПро пересобираем контейнер
