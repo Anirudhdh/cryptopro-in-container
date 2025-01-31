@@ -11,7 +11,7 @@
 - Запустить pcscd
 - Запустить контейнер из полученного образа
 ```
-docker run -ti --name cryptopro_doc -v /home/$USER/Documents:/Documents -v /run/pcscd/pcscd.comm:/run/pcscd/pcscd.comm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix"$DISPLAY" cryptopro-in-container:latest
+docker run -ti --name cryptopro_doc -v /home/$USER/Documents:/Documents -v /run/pcscd/pcscd.comm:/run/pcscd/pcscd.comm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix"$DISPLAY" cryptopro-in-container:latest /bin/bash -c 'firefox |& cptools'
 # Где /run/pcsсd/pcscd.comm сокет для обращений
 # /tmp/.X11-unix доступ к активной сессии
 # DISPLAY переменная определяющая где открывать окна
